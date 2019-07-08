@@ -1,33 +1,222 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #4484CE;
+  color: #fff;
   text-align: center;
+  padding: 10px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  background-color: #EFEFEF;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #333333;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.content {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #555555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #F9CF00;
+}
+
+.countries {
+  padding: 2rem;
+}
+
+.countries > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  list-style: none;
+}
+
+.ctr-container {
+  display:flex; 
+  align-items: center; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ctr-grid-container {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(50px, 150px));
+  background-color: #fff;
+  border: 2px dashed #F9CF00;
+  border-radius: 30px;  
+}
+.ctr-item-head {
+  grid-column: span 2;
+  background-color: #F9CF00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px 30px 0px 0px;
+  padding: 20px;
+}
+.ctr-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+@media screen and (max-width: 700px) {
+  .ctr-item {
+    grid-column: span 2;
+  }
+  h1, h2 {
+    font-size: 18px;
+  }
+}
+.ctr-item > img {
+  width: 50%;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.ctr-item > div{
+  white-space: pre;
+}
+
+.fct-grid-container {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(10px, 120px));
+  background-color: #fff;
+  border: 2px dashed #F9CF00;
+  border-radius: 30px;  
+}
+.fct-item-head {
+  grid-column: span 3;
+  background-color: #F9CF00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px 30px 0px 0px;
+  padding: 20px;
+}
+.fct-item, .fct-item-ft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px dashed #F9CF00;
+}
+.fct-item-ft {
+  grid-column: span 3;
+}
+section :last-of-type {
+  border-bottom: none;
+}
+@media screen and (max-width: 700px) {
+  .fct-item {
+    grid-column: span 3;
+    border: none;
   }
-  to {
-    transform: rotate(360deg);
+}
+.fct-item > img {
+  width: 50%;
+  height: auto;
+  border: 1px solid;
+}
+
+.fct-item > div{
+  white-space: pre;
+}
+
+.ctr-list-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 25px 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap:    10px;
+  border: 2px dashed rgba(114, 186, 94, 0.35);
+  background: rgba(114, 186, 94, 0.05);
+}
+
+table td, table th {
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+table thead tr {
+  height: 40px;
+  background: #F9CF00;
+}
+table td, table th {
+  padding: 5px;
+}
+.c1 {
+  text-align: center;
+  width: 25px;
+  padding: 5px;
+}
+@media screen and (max-width: 600px) {
+  .c-m {
+    display:none;
   }
+}
+
+.select {
+  padding:4px;
+  margin: 0;
+  background: #F9CF00;
+  color:#000000;
+  font-size: 16px;
+  font-weight: bold;
+  border:none;
+  outline:none;
+  display: inline-block;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  cursor:pointer;
+  width: 150px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .select {padding-right:18px}
+}
+
+label {position:relative}
+label:after {
+  content:"▼";   
+  font-size: 11px;
+  color:#000;
+  right:8px; top:4px;
+  padding:0 0 2px;
+  position:absolute;
+  pointer-events:none;
 }
