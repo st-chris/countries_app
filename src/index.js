@@ -5,7 +5,7 @@ import { Routes } from './routes';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Routes />
     
   </Router>, 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Buttons = (data) => {
 
@@ -6,11 +7,12 @@ const Buttons = (data) => {
       .map(item => item.name.substring(0, 1))
       .filter((value, index, self) => {
         return self.indexOf(value) === index;
-      }).sort();
+      }).sort()
+  ;
   
   return letters.map((letter, index) => {
     return (
-      <a className="btn" key={index} href={"/countries/" + letter}>{letter}</a> 
+      <Link className="btn" key={index} to={`/countries/${letter}`}>{letter}</Link>
     )
   });
 }
